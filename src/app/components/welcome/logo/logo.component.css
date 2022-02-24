@@ -1,0 +1,21 @@
+#logo
+{
+    
+    width:20%;
+    border: 2px solid yellow;
+    height:35.9vh;
+    /*contain:content;*/
+    margin-left: 10%;
+}
+img
+{
+    width:218px;
+}
+/*
+@media screen and (max-width: 767px)
+{
+    #logo
+    {
+        margin-left: 450px;
+    }
+}*/

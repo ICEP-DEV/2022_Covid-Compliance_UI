@@ -1,0 +1,41 @@
+#footer
+{
+    /*border: 2px solid green;*/
+    background-color: #93E2D8;
+    position:absolute;
+    height:10vh;
+    width:100%;
+    
+    margin: 0;
+    bottom: 0;
+    line-height:20px;
+}
+.txt_footer
+{
+    text-align: center;
+    /*border:2px solid red;*/
+    margin-top: 15%;
+}
+h3
+{
+    font-size: 14px;
+}
+span
+{
+    font-size: 12px;
+}
+img
+{
+    height:1.8vh;
+}
+.leftmenu
+{
+    float: left;
+    margin-left:1%;
+   
+}
+.rightmenu
+{
+    float: right;
+    margin-right: 1%;
+}

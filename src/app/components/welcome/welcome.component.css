@@ -1,0 +1,47 @@
+.container
+{
+    background-image: url('../../../assets/backdrop.jpg');
+    height:90vh;
+    width: 100%;
+    margin:0;
+}
+.buttons
+{
+    background-color: #93E2D8;
+    border: none;
+    border-radius: 0.25em;
+    width:150px;
+    height:50px;
+}
+h1
+{
+    text-align: center;
+    color: white;
+    display: inline-block;
+    
+}
+.header
+{
+    /*border-radius: 2 solid red;*/
+    text-align: center;
+    padding-top: 20px;
+}
+.btn_welcome
+{
+    text-align: center;
+    margin-top: 200px ;
+   
+}
+.txt_welcome
+{
+    text-align: center;
+    width: 50%;
+    margin: auto;
+    padding: 15px;
+    color:white;
+    /*border: 2px solid red;*/
+    background-color: rgba(128, 128, 128, 0.432);
+    height: 35vh;
+    border-radius: 0.5em;
+    overflow: auto;
+}
