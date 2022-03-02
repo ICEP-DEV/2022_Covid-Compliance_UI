@@ -1,0 +1,40 @@
+
+.container
+{
+    background-image: url('../../../../assets/backdrop.jpg');
+    height:90vh;
+    width: 100%;
+    margin:0;
+}
+input
+{
+    height: 3.5em;
+    width:300px;
+    margin:10px;
+    border-radius:1.5px;
+    border-style: none;
+}
+.buttons
+{
+    background-color: #93E2D8;
+    border: none;
+    border-radius: 0.25em;
+    width:150px;
+    height:50px
+}
+#sign_link
+{
+    color:rgba(0, 255, 255, 0.712);
+}
+#form_1
+{
+    /*border:2px solid red;*/
+    text-align: center;
+}
+
+#logo
+{
+    /*border:2px solid yellow;*/
+    padding-right:400px;
+   
+}
