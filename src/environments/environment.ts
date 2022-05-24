@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiUrl:"https://2022-covid-compliance-be-navy.vercel.app"
+  apiUrl:"http://localhost:3000"
 };
 
 /*

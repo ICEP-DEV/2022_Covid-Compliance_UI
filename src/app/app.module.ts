@@ -111,6 +111,7 @@ import { VacCardComponent } from './components/vac-card/vac-card.component';
     MatButtonModule,
     MatDialogModule,
     MatSidenavModule,
+    MatSidenavModule,
     MatFormFieldModule,
     MatInputModule,
     MatToolbarModule,
