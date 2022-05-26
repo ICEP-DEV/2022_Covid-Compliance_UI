@@ -5,12 +5,12 @@
 
  ::ng-deep.mat-form-field-underline {
     /*change color of underline*/
-    background-color: blue !important;
+    background-color: #e6b102 !important;
 }
 
  ::ng-deep.mat-form-field-ripple {
     /*change color of underline when focused*/
-    background-color: blue !important;
+    background-color: #e6b102 !important;
     ;
 }
 
@@ -193,11 +193,14 @@ section {
     text-align: center;
     background-color: #464646;
     padding-top: 45px;
-    width: 50%;
+    width: 40vw;
     margin: auto;
     margin-top: 20px;
     margin-bottom: 20px;
     border-radius: 15px;
+}
+.form_1 input{
+    color: #e6b102;
 }
 
 @media screen and (max-width:630px) {
