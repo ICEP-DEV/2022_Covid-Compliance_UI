@@ -354,17 +354,21 @@ a {
 .mat-raised-button {
     background-color: #003883;
 }
-
+.txt_head{
+    padding-top: 10px;
+}
 form{
     width: 60vw;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
 }
 form input{
     color: #e6b102;
     font-size: 14px;
-    width: 50vw;
+    width: 60vw;
+    display: flex;
+    flex-direction: column;
 
 }
