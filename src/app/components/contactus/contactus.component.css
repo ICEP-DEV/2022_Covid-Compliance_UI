@@ -111,28 +111,35 @@ mat-divider {
   margin-right: 20px;
 }
 
-.mat-progress-spinner circle,
-.mat-spinner circle {
-  stroke: #003883;
-}
-.container {
+
+
+form{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
   background-color: #e6b102;
-  position:relative;
-  /* max-width: 40vw; */
-  color: #003883;
-  /* height: 380px; */
-  padding:10px;
-  border-radius: 10px;
-  width:fit-content;
-  margin:10% auto;
-}
-.fieldbox
-{
-  text-align: center;
-}
-.example-full-width
-{
-  width:100%;
-}
+  width: 50vw;
+  max-height: 100vh;
+  padding: 10px;
+  margin-bottom: 25vh;
 
 
+}
+
+.mat-sidenav-content{
+  display: flex;
+  justify-content: center;
+  position: relative;
+  margin: 3vh;
+  height: 100vh;
+  margin-bottom: 10vh;
+
+}
+.mat-sidenav-content img{
+  max-height:90vh;
+  max-width: 40vw;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 25vh;
+
+}

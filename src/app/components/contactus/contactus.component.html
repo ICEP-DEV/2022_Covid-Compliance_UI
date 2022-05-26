@@ -50,38 +50,22 @@
         </button>
     </mat-sidenav>
   <mat-sidenav-content>
-     <!--  <div>
-        <img class="img-note" src="../../../assets/note.jpg">
-      </div> -->
 
-      <div class="container">
-        
-        
+        <img src="../../../assets/note.jpg">
         <form [formGroup]="contactForm" (ngSubmit)="submitForm()" class="example-form container-content" >
-           
+
             <h1 class="header">Send us an email.   <mat-icon>email</mat-icon></h1>
-            <div>
-                <img class="img-note" src="../../../assets/note.jpg" width="250">
-              </div>
-            <mat-divider></mat-divider>
-           
-            <div class="fieldbox">
+                   
                 <mat-form-field class="example-full-width" appearance="fill">
                 <mat-label>Identity Number</mat-label>
                 <input type="text" matInput formControlName="User_id">
-                </mat-form-field>
-                    
-                <br>
+                </mat-form-field> 
                
                 <mat-form-field class="example-full-width" appearance="fill">
                 <mat-label>Full Name</mat-label>
                 <input matInput type="text" formControlName="fullname">
                 </mat-form-field>
-                
-            </div>
-        
            
-            <div  class="fieldbox">
                 <mat-form-field class="example-full-width" appearance="fill">
                    
                     <mat-label>Email</mat-label>
@@ -94,20 +78,16 @@
                     </mat-error>
                   </mat-form-field>
 
-                 <br>
+                 
              <mat-form-field class="example-full-width" appearance="fill">
                 <mat-label>Message</mat-label>
                 <textarea formControlName="message" matInput placeholder="Ex. It makes me feel..." rows="5"></textarea>
               </mat-form-field>
-           <br><br>
             <button style="margin-left:10px" mat-raised-button color="primary" type="submit" >Submit</button>
-        </div>
-        <br>
 
         </form>
 
       
-    </div>
 
 </mat-sidenav-content>
 
