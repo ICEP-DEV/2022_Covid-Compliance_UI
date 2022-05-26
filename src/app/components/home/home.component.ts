@@ -139,7 +139,8 @@ getUserProfile(user:string):void
       this.userservice.getStudentFormCheck(user).subscribe(
         data=>
         {
-          if(data.message == 'Successful')
+          //alert(data.message)
+          if(data.message=='Successful')
           {
             this.theFormIsChecked=true;
             this.buttoncheck=false;

@@ -173,7 +173,7 @@ export class UserService
     return this.http.post<FormData>(`${this.apiUrl}/insert_healthform/user`,{data})
   }  
 
-  updateofficerInfo(officerdata: UpdateOfficer, id: string): Observable<UpdateOfficer[]> {
+  updateoUserInfo(officerdata: UpdateOfficer, id: string): Observable<UpdateOfficer[]> {
     {
       return this.http.put<UpdateOfficer[]>(`${this.apiUrl}/update/user/:`+ id,officerdata);
     }

@@ -63,6 +63,8 @@ import { UpdatePasswordComponent } from './components/update-password/update-pas
 import { NgToastModule } from 'ng-angular-popup';
 import { VacCardComponent } from './components/vac-card/vac-card.component';
 
+import { QRCodeModule } from 'angularx-qrcode';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -111,6 +113,7 @@ import { VacCardComponent } from './components/vac-card/vac-card.component';
     MatButtonModule,
     MatDialogModule,
     MatSidenavModule,
+    MatSidenavModule,
     MatFormFieldModule,
     MatInputModule,
     MatToolbarModule,
@@ -125,7 +128,8 @@ import { VacCardComponent } from './components/vac-card/vac-card.component';
     MatTableModule,
     MatPaginatorModule,
     MatSortModule,
-    NgToastModule
+    NgToastModule,
+    QRCodeModule
   ],
   providers: [CustomvalidationService,DatePipe,UserguardGuard],
   bootstrap: [AppComponent]

@@ -6,8 +6,9 @@
     </h1>
     <div class="qr_code">
        <!--  <img src="../../../assets/Qr code/qr_code.png"> -->
-       <img src={{qrImg}}>
-       
+      <!--  <img src={{qrImg}}>  -->
+        <qrcode [qrdata]="myAngularxQrCode" [width]="256" [errorCorrectionLevel]="'M'"></qrcode>
+
     </div>
 
 </div>

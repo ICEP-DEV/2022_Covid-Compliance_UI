@@ -26,7 +26,7 @@ mat-toolbar {
   color: #ffffff;
   height: 60px;
   text-align: center;
-  margin-left: -14px;
+ /*  margin-left: -14px; */
 }
 
 mat-sidenav {
@@ -115,43 +115,24 @@ mat-divider {
 .mat-spinner circle {
   stroke: #003883;
 }
-
 .container {
   background-color: #e6b102;
-  max-width: 40vw;
+  position:relative;
+  /* max-width: 40vw; */
   color: #003883;
-  height: 380px;
-  margin-right: 140px;
+  /* height: 380px; */
+  padding:10px;
+  border-radius: 10px;
+  width:fit-content;
+  margin:10% auto;
+}
+.fieldbox
+{
+  text-align: center;
+}
+.example-full-width
+{
+  width:100%;
 }
 
-.header {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
 
-.example-form {
-  min-width: 150px;
-  max-width: 500px;
-  width: 100%;
-}
-
-.example-full-width {
-  width: 100%;
-}
-
-td {
-  padding-right: 8px;
-}
-
-.img-note {
-  height: 380px;
-  right: 40%;
-  margin-left: 200px;
-}
-
-.mat-sidenav-content {
-  display: flex;
-  align-items: center;
-  justify-items: center;
-}

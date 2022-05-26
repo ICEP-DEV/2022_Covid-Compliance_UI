@@ -238,7 +238,7 @@ usertype!:string;
 
   deletesession()
   {
-    //sessionStorage.removeItem('user_id')
+    sessionStorage.removeItem('user_id')
     sessionStorage.removeItem('admin_id')
     sessionStorage.removeItem('officer_id')
   }

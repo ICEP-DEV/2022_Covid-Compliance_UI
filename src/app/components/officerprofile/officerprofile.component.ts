@@ -99,6 +99,7 @@ export class OfficerprofileComponent implements OnInit {
           this.officerprofile.controls['Email'].setValue(this.officers[0].Email); */
          
           //this.officerprofile.reset();
+          //this.toast.success({detail:"Profile Update",summary:"Profile Information Updated",duration:4000})
           alert('Officer details UPdated')
         }, error: () => {
           alert("Error while updating user");

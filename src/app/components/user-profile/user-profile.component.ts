@@ -112,9 +112,11 @@ export class UserProfileComponent implements OnInit {
 
 
   updateUser(userid: string) {
-    this.userservice.updateofficerInfo(this.userProfile.value,userid)
+    this.userservice.updateoUserInfo(this.userProfile.value,userid)
       .subscribe({
-        next: (res: any) => {
+        next: (res: any) =>
+        {
+          this.toast.success({detail:"Profile Update",summary:"Profile Information Updated",duration:4000})
            this.users = res.data;
            this.userProfile.controls['User_id'].setValue(this.users[0].User_id);
           this.userProfile.controls['Password'].setValue(this.users[0].Password);
@@ -122,7 +124,7 @@ export class UserProfileComponent implements OnInit {
           this.userProfile.controls['Email'].setValue(this.users[0].Email); 
  
           //this.officerprofile.reset();
-          this.toast.success({detail:"Profile Update",summary:"Profile Information Updated",duration:4000})
+         
         // alert('User details UPdated')
         }, error: () => {
           alert("Error while updating user");
