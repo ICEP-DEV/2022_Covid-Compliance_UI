@@ -295,6 +295,10 @@ input{
     margin: auto;
     margin-top: 2%;
 }
+.txt_sign_up a{
+    color: #e6b102;
+}
+
 
 @media screen and (max-width:630px) {
     .form_1 {
