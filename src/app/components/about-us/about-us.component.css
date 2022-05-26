@@ -233,11 +233,12 @@ and (orientation: portrait) {
   }
 }
 
-@media screen and (max-device-width: 640px)
+@media screen and (min-width: 1024px)
 and (orientation: landscape) {
 
   .card{
-    flex:50%;
+    flex:20px;
+    margin: 15px;
   }
 
 }
@@ -313,3 +314,4 @@ and (orientation: landscape) {
   display: block;
   margin-top: 5px;
    } 
+ 
