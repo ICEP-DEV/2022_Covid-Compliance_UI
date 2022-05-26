@@ -133,7 +133,7 @@ font-size: 20px;
 /*********************fgfhfgn************************/
 
 .container-about {
-  max-width: 80vw;
+  max-width: 100vw;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   grid-gap: 20px;
@@ -157,7 +157,7 @@ font-size: 20px;
   width: 100%;
   height: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
 }
 .container-about .card-about .face.face1 {
@@ -195,39 +195,13 @@ font-size: 20px;
   display: flex;
   flex-wrap: wrap;
   text-align: center;
-    /*justify-content: space-between;
-    margin-top: 50px;
-    padding: 20px; */
   }
   .card{
 
     flex:25%;
-    height:100vh;
-  /*   position: relative;
-    width: 230px;
-    
-    background: #fff;
-    margin: 0 auto;
-    border: none; */
-    
+    height:50vh;
+  
   }
-
-/*   @media (max-width:767px) {
-   .card {
-        flex:100%;
-    }
-} 
-
-@media (max-width:992px) {
-  .card {
-       flex:50%;
-   }
-
-  } */
-
-
-/*media queries for all sizes*/
-
 
 @media screen and (min-width:1024px) {
   .card {
@@ -267,20 +241,6 @@ and (orientation: landscape) {
   }
 
 }
-
-/*   @media screen  and (max-device-width:640px) {
-    .card {
-       flex:100%;
-    }
-} */
-
-/* @media screen and (min-device-width: 320px) {
-    .card {
-      flex:100%;
-        
-    }
-} */
-
 
 
   
