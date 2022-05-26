@@ -92,10 +92,7 @@ section {
 form .mat-icon{
     color: #e6b102;
 }
-input{
-    color: #e6b102;
-    font-size: 14px;
-}
+
 .container {
     width: 100%;
     margin-top: 2%;
@@ -124,6 +121,7 @@ input{
 
 .container .box .title h1 {
     font-family: 'Poppins';
+    margin-top: 25px;
     color: rgb(0, 0, 0);
     /*white*/
     font-size: 40px;
@@ -358,7 +356,15 @@ a {
 }
 
 form{
-    width: 40vw;
+    width: 60vw;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+form input{
+    color: #e6b102;
+    font-size: 14px;
+    width: 50vw;
+
 }
