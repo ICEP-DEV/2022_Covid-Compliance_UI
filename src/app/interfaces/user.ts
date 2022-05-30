@@ -1,5 +1,6 @@
 export interface UpdateOfficer
 {
+    Officer_id:string;
     Cellphone_number: string;
     Email: string;
     Password: string;
@@ -39,7 +40,9 @@ export interface UpdateUser {
     Cellphone_number: string;
     Email: string;
     Password: string;
-    vaccination_card:string;
+    User_id:string;
+    
+    //vaccination_card:string;
 
 }
 

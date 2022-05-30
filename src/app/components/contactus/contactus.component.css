@@ -116,30 +116,22 @@ mat-divider {
 form{
   display: flex;
   flex-direction: column;
-  flex-wrap: wrap;
-  background-color: #e6b102;
-  width: 50vw;
-  max-height: 100vh;
+  justify-content: center;
+  background: #e6b102;
+  width: 60vw;
+  height: 75vh;
   padding: 10px;
-  margin-bottom: 25vh;
-
+  flex-wrap: nowrap;
 
 }
 
 .mat-sidenav-content{
   display: flex;
-  justify-content: center;
-  position: relative;
-  margin: 5vh;
-  height: 100vh;
-  margin-bottom: 10vh;
-
-}
-.mat-sidenav-content img{
-  max-height:90vh;
-  max-width: 40vw;
   align-items: center;
   justify-content: center;
-  margin-bottom: 25vh;
+  position: absolute;
+  margin: 5vh 0;
+  width: 100vw;
+  height: 80vh;
 
 }

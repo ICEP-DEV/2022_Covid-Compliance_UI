@@ -1,4 +1,4 @@
-import { Router } from '@angular/router';
+import { NavigationEnd, Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { HealthFormComponent } from '../health-form/health-form.component';
@@ -8,7 +8,7 @@ import { BreakpointObserver } from '@angular/cdk/layout';
 import { MatSidenav } from '@angular/material/sidenav';
 import { delay } from 'rxjs/operators';
 import { ApiService } from 'src/app/services/api.service';
-import { User } from 'src/app/interfaces/user';
+import { UpdateUser, User } from 'src/app/interfaces/user';
 import { UserService } from 'src/app/services/user.service';
 import { HttpClient } from '@angular/common/http';
 import { ViewImage, ViewProfilePicture } from 'src/app/interfaces/file-to-upload';
@@ -24,6 +24,7 @@ export class UserProfileComponent implements OnInit {
   actionBtn:string = "Update";
 
   private apiUrl=environment.apiUrl;
+  Subscription: any;
   constructor( 
     private toast:NgToastService,
     private router:Router,
@@ -33,7 +34,25 @@ export class UserProfileComponent implements OnInit {
     private api:ApiService,
     private userservice:UserService,
     private http:HttpClient
-    ) { }
+    ) { 
+
+      this.router.routeReuseStrategy.shouldReuseRoute=function()
+      {
+        return false;
+      }
+      this.Subscription=this.router.events.subscribe((events)=>
+      {
+        if(event instanceof NavigationEnd)
+        {
+          this.router.navigated=false;
+        }
+      })
+    }
+    ngOnDestroy() {
+      if (this.Subscription) {
+        this.Subscription.unsubscribe();
+      }
+    }
 
     users!: User[];
     userInte!:User;
@@ -92,6 +111,7 @@ export class UserProfileComponent implements OnInit {
           ShowUsername:any
           ShowSurname:any
 
+          
           getUserProfile(user:string):void
           {
             this.api.getUser(user)
@@ -111,32 +131,38 @@ export class UserProfileComponent implements OnInit {
               }})}
 
 
-  updateUser(userid: string) {
-    this.userservice.updateoUserInfo(this.userProfile.value,userid)
-      .subscribe({
-        next: (res: any) =>
-        {
-          this.toast.success({detail:"Profile Update",summary:"Profile Information Updated",duration:4000})
-           this.users = res.data;
-           this.userProfile.controls['User_id'].setValue(this.users[0].User_id);
-          this.userProfile.controls['Password'].setValue(this.users[0].Password);
-          this.userProfile.controls['Cellphone_number'].setValue(this.users[0].Cellphone_number);
-          this.userProfile.controls['Email'].setValue(this.users[0].Email); 
- 
-          //this.officerprofile.reset();
-         
-        // alert('User details UPdated')
-        }, error: () => {
-          alert("Error while updating user");
-        }
-      })
-  }
+
+          UpdateUsers!: UpdateUser[];
+          updateUser(userid: string)
+          {
+            this.userservice.updateoUserInfo(this.userProfile.value)
+              .subscribe({
+            next: (res: any) =>
+            {
+              
+              
+              console.log(res);
+              this.toast.success({detail:"Profile Update",summary:"Profile Information Updated",duration:4000})
+              this.UpdateUsers = res.data;
+              this.userProfile.controls['User_id'].setValue(this.UpdateUsers[0].User_id);
+              this.userProfile.controls['Password'].setValue(this.UpdateUsers[0].Password);
+              this.userProfile.controls['Cellphone_number'].setValue(this.UpdateUsers[0].Cellphone_number);
+              this.userProfile.controls['Email'].setValue(this.UpdateUsers[0].Email); 
+              
+              //this.officerprofile.reset();
+            
+            alert('User details UPdated')
+            }, error: () => {
+              alert("Error while updating user");
+            }
+          })
+         }
 
   onUpdate() {
     this.updateUser(`${sessionStorage.getItem('user_id')}`);
    // alert(`${sessionStorage.getItem('user_id')}`)
    
-    location.reload()
+    //location.reload()
   }
 
       user=(this.get())
@@ -169,12 +195,14 @@ export class UserProfileComponent implements OnInit {
         formData.append('User_id',`${sessionStorage.getItem('user_id')}`)
         formData.append('pic_path', this.pic_path)
         //fd.append('pic_path',this.selectedFile,this.selectedFile.name);
-    
+        this.toast.info({detail:"Profile Message",summary:"Profile Picture Uploaded",duration:3500})
         this.http.put(`${this.apiUrl}/upload_pp/upload_pp`,formData).subscribe(
           res => {
             console.log(res)
-            this.toast.info({detail:"Profile Message",summary:"Profile Picture Uploaded",duration:3500})
+            
           }
+
+         
         )
         //this.onView();
         

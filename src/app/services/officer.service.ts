@@ -44,10 +44,10 @@ export class OfficerService {
   }
 
 
-  updateofficerInfo(officerdata:UpdateOfficer,id: string):Observable<UpdateOfficer[] >
+  updateofficerInfo(officerdata:UpdateOfficer):Observable<UpdateOfficer[] >
   {
       {
-      return this.http.put<UpdateOfficer[]>(`${this.apiUrl}/update_officer/officer/:`+id,officerdata);
+      return this.http.put<UpdateOfficer[]>(`${this.apiUrl}/update_officer/officer/${officerdata.Officer_id}`,officerdata);
     }
   }
 
