@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
@@ -22,6 +22,8 @@ export class AdminComponent implements OnInit {
 
   private apiUrl=environment.apiUrl;
   
+  encapsulation!: ViewEncapsulation.None;
+
   ngOnInit(): void {
     this.onView();
   }

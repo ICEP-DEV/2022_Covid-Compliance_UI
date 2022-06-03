@@ -64,6 +64,7 @@ import { NgToastModule } from 'ng-angular-popup';
 import { VacCardComponent } from './components/vac-card/vac-card.component';
 
 import { QRCodeModule } from 'angularx-qrcode';
+import {MatTabsModule} from '@angular/material/tabs';
 
 @NgModule({
   declarations: [
@@ -129,7 +130,8 @@ import { QRCodeModule } from 'angularx-qrcode';
     MatPaginatorModule,
     MatSortModule,
     NgToastModule,
-    QRCodeModule
+    QRCodeModule,
+    MatTabsModule
   ],
   providers: [CustomvalidationService,DatePipe,UserguardGuard],
   bootstrap: [AppComponent]

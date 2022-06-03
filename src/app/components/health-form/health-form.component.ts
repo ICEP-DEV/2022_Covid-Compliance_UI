@@ -52,6 +52,7 @@ export class HealthFormComponent implements OnInit {
     );
 
     this.setUserId()
+   
 
   }
  
@@ -115,7 +116,7 @@ export class HealthFormComponent implements OnInit {
   //User_id: string = "";
   postHealthData()
   {
-   
+    //alert(this.vstatus.value);
     this.formservice.form(this.healthform.value).pipe(first()).subscribe(
         data => {
           console.log(data);

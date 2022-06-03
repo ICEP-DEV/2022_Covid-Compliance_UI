@@ -1,3 +1,41 @@
+/* tabs */
+
+mat-tab-group
+{
+  margin:2% auto;
+
+}
+ .example-small-box, .example-large-box {
+  display:contents; 
+  
+  align-items:center;
+  justify-content: center;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 5px;
+}
+::ng-deep .mat-tab-list .mat-tab-labels {
+ /*  color:rgb(0, 0, 0); */
+  background-color: rgb(255, 255, 255);
+  
+  }
+
+/* .example-small-box {
+  height: 100vh;
+  width: 100%;
+
+}
+
+.example-large-box {
+  height: 100vh;
+  width: 100%;
+} */
+
+/* mat-tab
+{
+  background-color: green;
+} */
+/* end of tabs */
 mat-toolbar {
     background:#003883;
     color: #ffffff;

@@ -292,6 +292,7 @@ form .mat-icon{
     width: fit-content;
     margin: auto;
     margin-top: 2%;
+    border-radius: 5px;
 }
 .txt_sign_up a{
     color: #e6b102;

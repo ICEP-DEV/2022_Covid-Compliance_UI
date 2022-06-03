@@ -34,26 +34,8 @@ export class UserProfileComponent implements OnInit {
     private api:ApiService,
     private userservice:UserService,
     private http:HttpClient
-    ) { 
-
-      this.router.routeReuseStrategy.shouldReuseRoute=function()
-      {
-        return false;
-      }
-      this.Subscription=this.router.events.subscribe((events)=>
-      {
-        if(event instanceof NavigationEnd)
-        {
-          this.router.navigated=false;
-        }
-      })
-    }
-    ngOnDestroy() {
-      if (this.Subscription) {
-        this.Subscription.unsubscribe();
-      }
-    }
-
+    ) {}
+  
     users!: User[];
     userInte!:User;
     profilePicture:any
@@ -196,14 +178,19 @@ export class UserProfileComponent implements OnInit {
         formData.append('pic_path', this.pic_path)
         //fd.append('pic_path',this.selectedFile,this.selectedFile.name);
         this.toast.info({detail:"Profile Message",summary:"Profile Picture Uploaded",duration:3500})
-        this.http.put(`${this.apiUrl}/upload_pp/upload_pp`,formData).subscribe(
+        
+        this.userservice.uploadProfilePicture(formData).subscribe(res=>
+          {})
+
+          
+        /* this.http.put(`${this.apiUrl}/upload_pp/upload_pp`,formData).subscribe(
           res => {
             console.log(res)
             
           }
 
          
-        )
+        ) */
         //this.onView();
         
       }
@@ -214,10 +201,16 @@ export class UserProfileComponent implements OnInit {
     
       viewStudentProfile(studentNumber)
       {
+
         return `${this.apiUrl}/select_pp/view/${studentNumber}`;
+        
       }
 
 
+      /* reload()
+      {
+        this.router.
+      } */
   /*     view():void
       {
         this.userservice.onView(`${sessionStorage.getItem('user_id')}`)

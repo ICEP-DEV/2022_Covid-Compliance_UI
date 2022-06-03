@@ -1,6 +1,6 @@
 <mat-toolbar class="mat-elevation-z8">
 
-    <button mat-icon-button *ngIf="sidenav.mode === 'over'" (click)="sidenav.toggle()">
+   <!--  <button mat-icon-button *ngIf="sidenav.mode === 'over'" (click)="sidenav.toggle()">
   
         <mat-icon *ngIf="!sidenav.opened">
             menu
@@ -20,13 +20,13 @@
         <a class="left-nav"  routerLink="/report"><h3 class="nav-color">Report</h3></a> -->
   
   
-    <span class="right-nav"></span>
+    <!--<span class="right-nav"></span> -->
     <button mat-raised-button color="warn" (click)="openDialog()">Add Officer</button>
   
   </mat-toolbar>
   
   <mat-sidenav-container>
-    <mat-sidenav #sidenav="matSidenav" class="mat-elevation-z8">
+    <!-- <mat-sidenav #sidenav="matSidenav" class="mat-elevation-z8">
   
         <img class="avatar" src="../../../assets/social-care.png" alt = "userImage">
   
@@ -41,7 +41,7 @@
         <button mat-button class="menu-button" routerLink="/report">
           <mat-icon>assignment</mat-icon>
           <span>Report</span>
-      </button>
+      </button> -->
      <!--   <button mat-button class="menu-button" routerLink="/adminfeedback">
         <mat-icon>assignment</mat-icon>
         <span>Feedback</span>
@@ -64,7 +64,7 @@
         <mat-icon>assignment</mat-icon>
         <span>Feedback</span>
     </button> -->
-        <mat-divider></mat-divider>
+  <!--       <mat-divider></mat-divider>
   
         <button mat-button class="menu-button">
             <mat-icon>help</mat-icon>
@@ -76,7 +76,7 @@
             <span>Logout</span>
         </button>
   
-    </mat-sidenav>
+    </mat-sidenav> -->
   
     <mat-sidenav-content>
         

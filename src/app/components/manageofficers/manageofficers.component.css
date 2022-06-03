@@ -19,7 +19,7 @@ mat-toolbar {
   color: #ffffff;
   height: 60px;
   text-align: center;
-  margin-left: -14px;
+ /*  margin-left: -14px; */
 }
 
 mat-sidenav {
