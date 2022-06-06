@@ -39,7 +39,9 @@ export class HomeComponent implements OnInit {
       //alert(this.theButtonCheck)
       this.profilePicture=this.viewStudentProfile(sessionStorage.getItem('user_id'))
       this.getUserProfile(`${sessionStorage.getItem('user_id')}`);
-  }
+      this.getVisitor(`${sessionStorage.getItem('user_id')}`)
+      this.checkUserType();
+    }
 
     @ViewChild(MatSidenav)
     sidenav!: MatSidenav;
@@ -123,7 +125,22 @@ getUserProfile(user:string):void
       this.ShowUsername=this.users[0].First_name;
       this.ShowSurname=this.users[0].Last_name;
 
-    }})}
+    }})
+  }
+
+  getVisitor(user:string):void
+{
+  this.api.getVisitor(user)
+  .subscribe({
+    next:(res:any)=>
+    {
+      console.log(res);
+      this.users=res.data;
+      this.ShowUsername=this.users[0].First_name;
+      this.ShowSurname=this.users[0].Last_name;
+
+    }})
+  }
 
 
 
@@ -149,6 +166,18 @@ getUserProfile(user:string):void
         }
         
       )
+    }
+
+
+    userType=sessionStorage.getItem('isVisitor')
+    disableElements=true;
+    checkUserType():void
+    {
+      if(this.userType=='0')
+      {
+        this.disableElements=false;
+      }
+
     }
 
 }

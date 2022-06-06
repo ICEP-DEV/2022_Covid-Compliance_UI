@@ -222,6 +222,18 @@ export interface getTheUser {
     Email: string;
     Password: string;
 }
+export interface getTheVisitor
+{
+    Visitor_id: string;
+    Campus_id: string;
+    First_name: string;
+    Last_name: string;
+    Gender: string;
+    /* Type: string; */
+    Cellphone_number: string;
+    Email: string;
+    Password: string;
+}
 
 
 //Wisan
