@@ -28,8 +28,7 @@ ul {
 
 .footer {
     background-color: #003883;
-    padding: 70px 0;
-    /* margin-left: -14px; */
+    padding: 70px 20px;
 }
 
 .footer-col {
@@ -113,7 +112,9 @@ ul {
 /***********tool tip soical icons*************/
 .wrapper{
     display: inline-flex;
+    align-items: center;
     margin-top: 40px;
+    margin-left: -63px;
   }
   .wrapper .icon{
     margin: 0 35px;
