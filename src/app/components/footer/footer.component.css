@@ -113,8 +113,9 @@ ul {
 .wrapper{
     display: inline-flex;
     align-items: center;
-    margin-top: 40px;
-    margin-left: -63px;
+    margin-top: 20px;
+    margin:auto -63px;
+    background-color: red;
   }
   .wrapper .icon{
     margin: 0 35px;
@@ -127,11 +128,12 @@ ul {
     position: relative;
     z-index: 2;
     transition: 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    background-color: rgb(157, 255, 0);
   }
   .wrapper .icon span{
     display: flex;
-    height: 40px;
-    width: 40px;
+    height: 30px;
+    width: 30px;
     align-items: center;
     justify-content: center;
     background: #fff;
