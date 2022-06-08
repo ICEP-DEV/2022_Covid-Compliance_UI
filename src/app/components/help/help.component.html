@@ -1,0 +1,100 @@
+<mat-toolbar class="mat-elevation-z8">
+
+    <button mat-icon-button *ngIf="sidenav.mode === 'over'" (click)="sidenav.toggle()">
+
+      <mat-icon *ngIf="!sidenav.opened">
+          menu
+      </mat-icon>
+
+      <mat-icon *ngIf="sidenav.opened">
+          close
+      </mat-icon>
+
+  </button>
+    <a href=""><img routerLink="/home" class="logo" src="../../../assets/logo6.png">
+    </a>
+    <!--  <a class="left-nav"  routerLink="/aboutus"><h3>About Us</h3></a>
+      <a class="left-nav"  routerLink="/contactus"><h3>Contact Us</h3></a>
+
+-->
+    <span class="right-nav"></span>
+    <button mat-raised-button color="warn" routerLink="/login">Get Started</button>
+
+</mat-toolbar>
+
+<div>
+
+    <mat-accordion>
+        <mat-expansion-panel>
+            <mat-expansion-panel-header>
+                <mat-panel-title>Why the Covid compliance system ?</mat-panel-title>
+            </mat-expansion-panel-header>
+            <p>Covid compliance system is the system that will better the covid 19 entrance screening at TUT that will be aligned with the regulations of covid-19n and help with keeping track or records of tests.</p>
+            <p>The purpose of this system is to assist in the adherence of covid-19 regulations when people enter out campuses. The regulations that the system will help with them being adhered to are social distancing, better ways of doing daily health
+                checks, keeping records online of everyone that enters TUT campus and avoiding the touching of staff, student and visitor cards by officers and then giving them back to the owners.</p>
+        </mat-expansion-panel>
+    </mat-accordion>
+
+    <mat-accordion>
+        <mat-expansion-panel>
+            <mat-expansion-panel-header>
+                <mat-panel-title>How to get started using the system?</mat-panel-title>
+            </mat-expansion-panel-header>
+            <p>First thing a User have to register on the system in order to be on our database before entering the campus and then afterwards login.</p>
+        </mat-expansion-panel>
+    </mat-accordion>
+
+    <mat-accordion>
+        <mat-expansion-panel>
+            <mat-expansion-panel-header>
+                <mat-panel-title>How do I submit my health information to the system?</mat-panel-title>
+            </mat-expansion-panel-header>
+            <p>After a user has logged in, the health form will pop up which will need to be filled to notify the system of who and when the user has been at campus.</p>
+        </mat-expansion-panel>
+    </mat-accordion>
+
+    <mat-accordion>
+        <mat-expansion-panel>
+            <mat-expansion-panel-header>
+                <mat-panel-title>Who is going check my health information and how will they check?</mat-panel-title>
+            </mat-expansion-panel-header>
+            <p>QR code will be sent to a user after submitting a health form, a user will scan that QR on the gate so an officer will be able to view a user profile on his site.</p>
+        </mat-expansion-panel>
+    </mat-accordion>
+
+</div>
+<mat-sidenav-container>
+    <mat-sidenav #sidenav="matSidenav" class="mat-elevation-z8">
+
+        <!--  <img class="avatar" src="../../../assets/social-care.png" alt = "userImage"> -->
+
+        <mat-divider></mat-divider>
+
+        <button mat-button class="menu-button" routerLink="/home">
+          <mat-icon>home</mat-icon>
+          <span>Home</span>
+      </button>
+
+        <button mat-button class="menu-button" routerLink="/aboutus">
+          <mat-icon>information</mat-icon>
+          <span>About Us</span>
+      </button>
+
+        <!--   <button mat-button class="menu-button" routerLink="/contactus">
+          <mat-icon>phone</mat-icon>
+          <span>Contact Us</span>
+      </button> -->
+        <mat-divider></mat-divider>
+        <button mat-button class="menu-button" routerLink="/help">
+          <mat-icon>help</mat-icon>
+          <span>Help</span>
+      </button>
+    </mat-sidenav>
+    <mat-sidenav-content>
+
+    </mat-sidenav-content>
+
+
+</mat-sidenav-container>
+
+<app-footer></app-footer>
