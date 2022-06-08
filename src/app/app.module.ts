@@ -36,6 +36,7 @@ import { OfficerComponent } from './components/officer/officer.component';
 import { HomeComponent } from './components/home/home.component';
 import { AboutUsComponent } from './components/about-us/about-us.component';
 import { ContactusComponent } from './components/contactus/contactus.component';
+import { HelpComponent } from './components/help/help.component';
 import { UserProfileComponent } from './components/user-profile/user-profile.component';
 import { AdminComponent } from './components/admin/admin.component';
 import { AddOfficerComponent } from './components/add-officer/add-officer.component';
@@ -64,7 +65,12 @@ import { NgToastModule } from 'ng-angular-popup';
 import { VacCardComponent } from './components/vac-card/vac-card.component';
 
 import { QRCodeModule } from 'angularx-qrcode';
+
 import {MatTabsModule} from '@angular/material/tabs';
+
+
+import {MatExpansionModule} from '@angular/material/expansion';
+import { StatsComponent } from './components/stats/stats.component';
 
 @NgModule({
   declarations: [
@@ -78,6 +84,7 @@ import {MatTabsModule} from '@angular/material/tabs';
     HomeComponent,
     AboutUsComponent,
     ContactusComponent,
+    HelpComponent,
     UserProfileComponent,
     AdminComponent,
     AddOfficerComponent,
@@ -101,7 +108,8 @@ import {MatTabsModule} from '@angular/material/tabs';
     AdminfeedComponent,
     UpdatePasswordComponent,
     VacCardComponent,
-  
+    StatsComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -131,11 +139,15 @@ import {MatTabsModule} from '@angular/material/tabs';
     MatSortModule,
     NgToastModule,
     QRCodeModule,
-    MatTabsModule
+
+    MatTabsModule,
+
+    MatExpansionModule
+
   ],
   providers: [CustomvalidationService,DatePipe,UserguardGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule {
-  
+
  }

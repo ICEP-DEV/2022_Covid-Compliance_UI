@@ -8,6 +8,7 @@ import { OfficerComponent } from './components/officer/officer.component';
 import { HomeComponent } from './components/home/home.component';
 import { AboutUsComponent } from './components/about-us/about-us.component';
 import { ContactusComponent } from './components/contactus/contactus.component';
+import { HelpComponent } from './components/help/help.component';
 import { UserProfileComponent } from './components/user-profile/user-profile.component';
 import { AdminComponent } from './components/admin/admin.component';
 import { LandingPageComponent } from './components/landing-page/landing-page.component';
@@ -25,7 +26,7 @@ import { AdminguardGuard } from './guards/adminguard.guard';
 import { OfficerguardGuard } from './guards/officerguard.guard';
 import { RegistervisitorComponent } from './components/registervisitor/registervisitor.component';
 import { Stats } from 'fs';
-//import { StatsComponent } from './components/stats/stats.component';
+import { StatsComponent } from './components/stats/stats.component';
 import { AdminfeedComponent } from './components/adminfeed/adminfeed.component';
 import { UpdatePasswordComponent } from './components/update-password/update-password.component';
 const routes: Routes = [
@@ -38,6 +39,7 @@ const routes: Routes = [
  {path:'home',component:LandingPageComponent},
  {path:'aboutus',component:AboutUsComponent},
  {path:'contactus',component:ContactusComponent},
+ {path:'help',component:HelpComponent},
  {path:'userprofile',component:UserProfileComponent,canActivate:[UserguardGuard]},
  {path:'admin',component:AdminComponent,canActivate:[AdminguardGuard]},
  {path:'qrcode',component:HomeComponent,canActivate:[UserguardGuard]},
@@ -56,8 +58,8 @@ const routes: Routes = [
  {path:'newsfeed',component:AdminfeedComponent,canActivate:[AdminguardGuard]},
  {path: 'studentcard/:User_id', component: StudentcardComponent,/*  canActivate: [OfficerguardGuard] */},
  {path:'reset_password/reset_password/:User_id',component:UpdatePasswordComponent},
- {path: '**',redirectTo:'ViewpendingComponent'}//if they put any route without the user id it loads the view pending
- //{path:'stats',component:StatsComponent,canActivate:[AdminguardGuard]}
+ {path: '**',redirectTo:'ViewpendingComponent'},//if they put any route without the user id it loads the view pending
+ {path:'stats',component:StatsComponent,canActivate:[AdminguardGuard]}
 ];
 
 @NgModule({
@@ -66,7 +68,7 @@ const routes: Routes = [
 })
 export class AppRoutingModule { }
 export const routingMods={HealthFormComponent,HomeComponent,AboutUsComponent,
-  ContactusComponent,OfficerComponent,LoginComponent,
+  ContactusComponent,HelpComponent,OfficerComponent,LoginComponent,
   RegisterComponent,UserProfileComponent,ResetpasswordComponent,AdminComponent,
   LandingPageComponent,ReportComponent,ReportItemComponent,ManageofficersComponent,
   OfficerRecordsComponent,StudentcardComponent,UpdatePasswordComponent}

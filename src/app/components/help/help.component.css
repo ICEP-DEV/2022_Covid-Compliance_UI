@@ -1,0 +1,168 @@
+
+
+mat-toolbar {
+  background:#003883;
+  color: #ffffff;
+  height: 60px;
+  text-align: center;
+  margin-left: -14px;
+}
+
+mat-sidenav {
+  margin: 16px;
+  width: 200px;
+  border-right: none;
+  background: #ffffff;
+  color: #003883;
+  border-radius: 10px;
+  padding: 16px;
+  text-align: center;
+}
+
+mat-sidenav-container {
+  height: calc(100vh - 65px);
+}
+
+.menu-button {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  font-size: 1rem;
+
+
+}
+mat-icon {
+      margin-right: 8px;
+  }
+.avatar {
+  margin-top: 16px;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+
+.name {
+  margin-top: 8px;
+  font-weight: normal;
+}
+
+.designation {
+  margin-top: 2px;
+  font-size: 0.7rem;
+  color: rgb(255, 254, 254);
+}
+
+mat-divider {
+  margin-top: 16px;
+  margin-bottom: 16px;
+  background-color: rgba(255, 0, 0, 0.5);
+}
+.right-nav {
+  display: flex;
+  flex: 1 1 auto;
+}
+.left-nav{
+  display: flex;
+  margin-left: 20px;
+  text-decoration: none;
+  
+}
+.left-nav:visited{
+  color: #f7f7f7;
+  text-decoration: none;
+
+}
+.mat-drawer-container {
+ /* background-image: url('../../../assets/logo4.jpg');*/
+  background-repeat: no-repeat;
+  background-size:cover;
+  background-color: rgb(255, 255, 255);
+  color: #003883;
+}
+.logo{
+  width: 170px;
+  height: fit-content;
+  background-color: white ;
+  margin-right: 20px;
+}
+
+
+.container{
+  max-width: 100vw;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-gap: 20px;
+  margin: auto;
+  margin-top: 3%;
+  padding: 20px 0;
+}
+
+
+
+
+
+.mat-flat-button.mat-primary,
+.mat-raised-button.mat-primary,
+.mat-fab.mat-primary,
+.mat-mini-fab.mat-primary {
+    background-color: #003883;
+}
+
+
+
+
+.menu-button {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    font-size: 1rem;
+}
+
+
+
+
+
+.name {
+    margin-top: 8px;
+    font-weight: normal;
+}
+
+.designation {
+    margin-top: 2px;
+    font-size: 0.7rem;
+    color: rgb(255, 254, 254);
+}
+
+
+.mat-accordion {
+    background-size: 50%;
+}
+
+/* ::ng-deep .mat-expansion-panel {
+    width: 50%;
+    left: 350px;
+} */
+
+.mat-accordion .mat-expansion-panel .mat-expansion-panel-header {
+    background-color: #003883;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
