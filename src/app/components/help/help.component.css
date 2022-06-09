@@ -1,32 +1,11 @@
-::ng-deep .mat-focused .mat-form-field-label {
-  /*change color of label*/
-  color: white !important;
-}
 
-::ng-deep.mat-form-field-underline {
-  /*change color of underline*/
-  background-color: blue !important;
-}
-
-::ng-deep.mat-form-field-ripple {
-  /*change color of underline when focused*/
-  background-color: blue !important;
-  ;
-}
-
-.mat-flat-button.mat-primary,
-.mat-raised-button.mat-primary,
-.mat-fab.mat-primary,
-.mat-mini-fab.mat-primary {
-  background-color: #003883;
-}
 
 mat-toolbar {
-  background: #003883;
+  background:#003883;
   color: #ffffff;
   height: 60px;
   text-align: center;
- /*  margin-left: -14px; */
+  margin-left: -14px;
 }
 
 mat-sidenav {
@@ -50,12 +29,12 @@ mat-sidenav-container {
   align-items: center;
   justify-content: flex-start;
   font-size: 1rem;
-}
 
+
+}
 mat-icon {
-  margin-right: 8px;
-}
-
+      margin-right: 8px;
+  }
 .avatar {
   margin-top: 16px;
   width: 100px;
@@ -79,59 +58,111 @@ mat-divider {
   margin-bottom: 16px;
   background-color: rgba(255, 0, 0, 0.5);
 }
-
 .right-nav {
   display: flex;
   flex: 1 1 auto;
 }
-
-.left-nav {
+.left-nav{
   display: flex;
   margin-left: 20px;
   text-decoration: none;
+  
 }
-
-.left-nav:visited {
+.left-nav:visited{
   color: #f7f7f7;
   text-decoration: none;
-}
 
+}
 .mat-drawer-container {
-  /* background-image: url('../../../assets/logo4.jpg');*/
+ /* background-image: url('../../../assets/logo4.jpg');*/
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size:cover;
   background-color: rgb(255, 255, 255);
   color: #003883;
 }
-
-.logo {
+.logo{
   width: 170px;
   height: fit-content;
-  background-color: white;
+  background-color: white ;
   margin-right: 20px;
 }
 
 
-
-form{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  background: #e6b102;
-  width: 60vw;
-  height: 75vh;
-  padding: 10px;
-  flex-wrap: nowrap;
-
+.container{
+  max-width: 100vw;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-gap: 20px;
+  margin: auto;
+  margin-top: 3%;
+  padding: 20px 0;
 }
 
-.mat-sidenav-content{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: absolute;
-  margin: 5vh 0;
-  width: 100vw;
-  height: 80vh;
 
+
+
+
+.mat-flat-button.mat-primary,
+.mat-raised-button.mat-primary,
+.mat-fab.mat-primary,
+.mat-mini-fab.mat-primary {
+    background-color: #003883;
 }
+
+
+
+
+.menu-button {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    font-size: 1rem;
+}
+
+
+
+
+
+.name {
+    margin-top: 8px;
+    font-weight: normal;
+}
+
+.designation {
+    margin-top: 2px;
+    font-size: 0.7rem;
+    color: rgb(255, 254, 254);
+}
+
+
+.mat-accordion {
+    background-size: 50%;
+}
+
+/* ::ng-deep .mat-expansion-panel {
+    width: 50%;
+    left: 350px;
+} */
+
+.mat-accordion .mat-expansion-panel .mat-expansion-panel-header {
+    background-color: #003883;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 

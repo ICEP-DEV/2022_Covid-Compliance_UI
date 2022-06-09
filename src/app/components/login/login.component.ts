@@ -53,6 +53,7 @@ export class LoginComponent implements OnInit
 
     })
 
+    
   }
 
   users = Typelist;
@@ -74,6 +75,7 @@ get Password()
  
 
 
+  isVisitor='0'
 
 //user Type Selection
  UserSelected(value:any)
@@ -165,6 +167,7 @@ get Password()
       }
       break;
 
+
     case 4:
       {
         //alert('This is the Visitor talking');
@@ -179,6 +182,7 @@ get Password()
               this.router.navigate(['qrcode']);
               sessionStorage.setItem('user_id',data.User_id);
               this.toast.success({detail:"Login Message",summary:"Login Successfully",duration:4000});
+              sessionStorage.setItem("isVisitor",this.isVisitor)
             }
             else if (data.message =='Unsuccessful')
             {
@@ -238,9 +242,10 @@ usertype!:string;
 
   deletesession()
   {
-    //sessionStorage.removeItem('user_id')
+    sessionStorage.removeItem('user_id')
     sessionStorage.removeItem('admin_id')
     sessionStorage.removeItem('officer_id')
+    sessionStorage.removeItem('isVisitor')
   }
 
 }

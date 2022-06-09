@@ -84,12 +84,12 @@
                         <br><br>
                         <mat-form-field appearance="fill">
                             <mat-label>Username</mat-label>
-                            <input matInput formControlName="User_id">
+                            <input matInput formControlName="User_id" placeholder="ID/Staff/Student Number">
                             <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
                         <mat-icon matSuffix>face</mat-icon>
                       </button>
                             <mat-error *ngIf="User_id.invalid && User_id.touched">Username Reguired</mat-error>
-                            <mat-hint>Staff/Student Number</mat-hint>
+                           <!--  <mat-hint>Staff/Student Number</mat-hint> -->
 
                         </mat-form-field>
                         <br><br>
@@ -104,10 +104,10 @@
                             <mat-error *ngIf="(Password.touched || submitted)&& Password.errors?.required">Password is required</mat-error>
 
                             <mat-error *ngIf="(Password.touched && Password.errors?.invalidPassword)">Password should have minimum 8 of characters,at least 1 uppercase letter,1 lowercase letter and 1 number</mat-error>
-                            <mat-hint>Minimum of 8 characters</mat-hint>
+                            <!-- <mat-hint>Minimum of 8 characters</mat-hint> -->
                         </mat-form-field>
                         <br><br>
-                        <br>
+                        <!-- <br> -->
                         <button mat-raised-button [disabled]="loginForm.invalid" (click)="UserSelected(selectedUser)" href="officer">Login</button> &nbsp;&nbsp;
 
                         <button class='fpass' mat-raised-button routerLink="/resetpass">Forgot Password</button>

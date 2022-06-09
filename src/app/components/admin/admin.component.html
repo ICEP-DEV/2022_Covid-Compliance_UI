@@ -25,26 +25,27 @@
       <img class="avatar" src="../../../assets/social-care.png" alt = "userImage">
 
       <h4 class="name">ADMIN</h4>
-      <mat-divider></mat-divider>
+     <mat-divider></mat-divider> 
 
-      <button mat-button class="menu-button" routerLink="/admin">
+  <!--     <button mat-button class="menu-button" routerLink="/admin">
           <mat-icon>home</mat-icon>
           <span>Home</span>
-      </button>
+      </button> -->
 
-      <button mat-button class="menu-button" >
+     <!--  <button mat-button class="menu-button" >
           <mat-icon>person</mat-icon>
           <span>Profile</span>
-      </button>
+      </button> -->
 
-      <button mat-button class="menu-button" routerLink="/manageofficers">
+      <!-- <button mat-button class="menu-button" routerLink="/manageofficers">
         <mat-icon>accessibility_new</mat-icon>
         <span>Officers</span>
 
-      </button> <button mat-button class="menu-button" routerLink="/report">
+      </button> -->
+     <!--  <button mat-button class="menu-button" routerLink="/report">
         <mat-icon>assignment</mat-icon>
         <span>Report</span>
-    </button>
+    </button> -->
    <!--  <button mat-button class="menu-button" routerLink="/adminfeedback">
         <mat-icon>assignment</mat-icon>
         <span>Comments</span>
@@ -52,27 +53,27 @@
 
 
 
-   <!--  <button mat-button class="menu-button" routerLink="/stats">
+ <button mat-button class="menu-button" routerLink="/stats">
         <mat-icon>assignment</mat-icon>
         <span>Stats</span>
-    </button> -->
+    </button> 
 
-    <button mat-button class="menu-button" routerLink="/newsfeed">
+   <!--  <button mat-button class="menu-button" routerLink="/newsfeed">
         <mat-icon>assignment</mat-icon>
         <span>NewsFeed</span>
-    </button>
+    </button> -->
 
       <mat-divider></mat-divider>
 
-      <button mat-button class="menu-button">
+ <!--      <button mat-button class="menu-button">
         <mat-icon>edit</mat-icon>
         <span>Edit Home</span>
-    </button>
+    </button> -->
 
-      <button mat-button class="menu-button">
+     <!--  <button mat-button class="menu-button">
           <mat-icon>help</mat-icon>
           <span>Help</span>
-      </button>
+      </button> -->
       
       <button mat-button class="menu-button" (click)="deletesession()">
           <mat-icon>exit_to_app</mat-icon>
@@ -83,50 +84,43 @@
 
   <mat-sidenav-content>
       
-        <h1 class="header">Hover over each logo to edit carousel items</h1>
-       
-        <div class="flip-container">
-            <div class="flip-card">
-                <div class="flip-card-inner">
-                <div class="flip-card-front">
-                </div>
-                <div class="flip-card-back">
-                    <h1>Carousel Image Items</h1> 
-                    <h3>Please Select an Image (png/jpg/gif)</h3>      
-                    <!-- <input type="text"  (change)="getName(name.value)" #name> --><br>
-                    <input type="file"  (change)="onFileSelected($event)" placeholder="Upload image">
-                    <button (click)="onUpload()">upload</button>
-                    <br><br>   
-                </div>
-                </div>
-            </div>
-
-            <div class="flip-card">
-                <div class="flip-card-inner">
-                <div class="flip-card-front">
-                </div>
-                <div class="flip-card-back">
-                    <h1>Carousel Video Items</h1> 
-                    <h3>Please Select a Video (.mp4)</h3> 
-                    <input type="text"  (change)="getName(name.value)" #name placeholder="Image name"><br>
-                    <input type="file"  (change)="onFileSelected($event)" placeholder="upload image">
-                    <button (click)="onUpload()">upload</button>
-                </div>
-                </div>
-            </div>
-            </div>  
-            <h1 class="header">Uploaded Images</h1>
-
-            <div class="carousel-images">
-                <ul  *ngFor="let image of images;">
-                <li><img   src={{image.pic_path}} height="300px" width="400px" alt="picture"></li>
-                <li><video  loop src={{image.pic_path}} autoplay height="300px" width="400px"></video></li>
-                </ul>
-        
-                <br>
-            </div>
+    <div class="align">
+        <h3>Admin Panel</h3>
+    <mat-tab-group animationDuration="1500ms" backgroundColor="accent" color="accent">
       
-     </mat-sidenav-content>
+        <mat-tab  label="Officers">
+
+            <div class="example-large-box mat-elevation-z4" >
+
+                <app-manageofficers></app-manageofficers>
+
+            </div>
+
+        </mat-tab>
+
+        <mat-tab label="Record">
+
+            <div class="example-large-box mat-elevation-z4">
+                <app-report></app-report>
+            </div>
+
+        </mat-tab>
+
+        <mat-tab label="NewsFeed">
+
+            <div class="example-large-box mat-elevation-z4">
+
+                <app-adminfeed></app-adminfeed>
+
+            </div>
+
+        </mat-tab>
+
+    </mat-tab-group>
+
+</div>
+      
+</mat-sidenav-content>
 </mat-sidenav-container>
 
 <!-- <app-stats></app-stats> -->

@@ -4,6 +4,10 @@
 
 export const environment = {
   production: false,
+<<<<<<< HEAD
+=======
+ //apiUrl:"https://2022-covid-compliance-back.vercel.app"
+>>>>>>> Hamilton
   apiUrl:"http://localhost:3000"
 };
 

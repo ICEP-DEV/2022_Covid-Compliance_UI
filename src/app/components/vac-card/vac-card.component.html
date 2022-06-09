@@ -3,10 +3,17 @@
     <h1>
         Vaccination Card
     </h1>
-    <div class="qr_code">
+    <div class="vac_card">
        <!--  <img src="../../../assets/Qr code/qr_code.png"> -->
-       <img class="avatar" src={{vacCard}} alt = "profile picture">
+       <img src={{vaccinationCard}} alt = "Vaccination Card">
        
+    </div>
+    <br><br>
+    <div class="vac_card"  style="display: block;justify-content: center;align-items: center;">
+        <mat-label>Please upload your vaccination card </mat-label><br><br>
+        <input type="file"  (change)="onFileSelected($event)" >
+        <br><br>
+        <button type="submit" mat-raised-button color="warn" (click)="onUpload()">Upload Card</button>
     </div>
 
 </div>

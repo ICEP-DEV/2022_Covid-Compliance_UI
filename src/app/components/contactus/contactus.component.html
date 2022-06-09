@@ -50,33 +50,20 @@
         </button>
     </mat-sidenav>
   <mat-sidenav-content>
-      <div>
-        <img class="img-note" src="../../../assets/note.jpg">
-      </div>
 
-    <div class="container">
-        
-        
         <form [formGroup]="contactForm" (ngSubmit)="submitForm()" class="example-form container-content" >
-           
+
             <h1 class="header">Send us an email.   <mat-icon>email</mat-icon></h1>
-            <mat-divider></mat-divider>
-           <table class="example-full-width" cellspacing="0">
-                <tr>
-                    <td>
-                        <mat-form-field class="example-full-width" appearance="fill">
-                        <mat-label>Identity Number</mat-label>
-                        <input type="text" matInput formControlName="User_id">
-                        </mat-form-field>
-                    </td>
-                    <td>
-                        <mat-form-field class="example-full-width" appearance="fill">
-                        <mat-label>Full Name</mat-label>
-                        <input matInput type="text" formControlName="fullname">
-                        </mat-form-field>
-                    </td>
-                </tr>
-            </table>
+                   
+                <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Identity Number</mat-label>
+                <input type="text" matInput formControlName="User_id">
+                </mat-form-field> 
+               
+                <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Full Name</mat-label>
+                <input matInput type="text" formControlName="fullname">
+                </mat-form-field>
            
                 <mat-form-field class="example-full-width" appearance="fill">
                    
@@ -91,18 +78,17 @@
                   </mat-form-field>
 
                  
-            <mat-form-field class="example-full-width" appearance="fill">
+             <mat-form-field class="example-full-width" appearance="fill">
                 <mat-label>Message</mat-label>
-                <textarea formControlName="message" matInput placeholder="Ex. It makes me feel..."></textarea>
+                <textarea formControlName="message" matInput placeholder="Ex. It makes me feel..." rows="5"></textarea>
               </mat-form-field>
-           
             <button style="margin-left:10px" mat-raised-button color="primary" type="submit" >Submit</button>
-            <br>
 
         </form>
-    </div>
 
-    </mat-sidenav-content>
+      
+
+</mat-sidenav-content>
 
    
 </mat-sidenav-container>

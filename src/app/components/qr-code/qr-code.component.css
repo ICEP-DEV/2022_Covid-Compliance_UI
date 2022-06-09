@@ -6,11 +6,11 @@
     border-radius: 7px;
     padding: 16px 25px;
 
-   margin: 15% auto;
+   margin: 2.5% auto;
 }
 img
 {
-    height:250px;
+    height:200px;
     margin:auto 15%;
 }
 h1
@@ -22,8 +22,8 @@ h1
 
 .wrapper .qr_code
 {
-    padding:33px 0;
-    margin:auto 5%;
+    padding:30px 0;
+    margin:auto 12%;
     align-items:center;
     justify-content:center;
     border-radius:5px;

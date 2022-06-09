@@ -2,7 +2,7 @@ table,mat-paginator
 {
     width:100%;
     margin:auto;
-    background-color: rgba(141, 141, 141, 0.315);
+    /* background-color: rgba(141, 141, 141, 0.315); */
 }
 table {
     width: 100%;
@@ -24,10 +24,10 @@ mat-toolbar {
   color: #ffffff;
   height: 60px;
   text-align: center;
-  margin-left: -14px;
+  /* margin-left: -14px; */
 }
 
-mat-sidenav {
+/* mat-sidenav {
   margin: 16px;
   width: 200px;
   border-right: none;
@@ -36,7 +36,7 @@ mat-sidenav {
   border-radius: 10px;
   padding: 16px;
   text-align: center;
-}
+} */
 
 .content {
   height: calc(100vh - 98px);
@@ -123,10 +123,10 @@ mat-divider {
 .mat-progress-spinner circle, .mat-spinner circle {
   stroke: #003883;
 }
-mat-toolbar[_ngcontent-qtv-c178] {
+/* mat-toolbar[_ngcontent-qtv-c178] {
   background: #dbdbdb;
   color: whitesmoke;
-}
+} */
 
 
 

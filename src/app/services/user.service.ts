@@ -66,31 +66,12 @@ export class UserService
     /* return this.http.post(`http://localhost:3000/login/user`,user); */
   }
 
-
-  /* setSeesion(token: string)
-  {
-    sessionStorage.setItem('token',token);
-  } */
- /*  getToken() {
-    localStorage.getItem('token');
-  } */
   deleteToken() {
     localStorage.removeItem('token');
   }
 
 
 
-/*   setToken(token: string)
-  {
-    localStorage.setItem('token',token);
-  }
- /*  getToken() {
-    localStorage.getItem('token');
-  } 
-  deleteToken() {
-    localStorage.removeItem('token');
-  } 
-  */
 
 
 
@@ -173,10 +154,12 @@ export class UserService
     return this.http.post<FormData>(`${this.apiUrl}/insert_healthform/user`,{data})
   }  
 
-  updateofficerInfo(officerdata: UpdateOfficer, id: string): Observable<UpdateOfficer[]> {
-    {
-      return this.http.put<UpdateOfficer[]>(`${this.apiUrl}/update/user/:`+ id,officerdata);
-    }
+  updateoUserInfo(User: UpdateUser): Observable<UpdateUser>
+  {
+    
+      return this.http.put<UpdateUser>(`${this.apiUrl}/update/user/${User.User_id}`,User)
+      
+    
   }
   
 
@@ -189,6 +172,14 @@ export class UserService
         return Users;
       })
     )
+  }
+
+
+
+  uploadProfilePicture(formData:any):Observable<any>
+  {
+    return this.http.put(`${this.apiUrl}/upload_pp/upload_pp`,formData)
+  
   }
 
 }

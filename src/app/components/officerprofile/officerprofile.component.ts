@@ -8,6 +8,7 @@ import { delay } from 'rxjs';
 import { HealthFormComponent } from '../health-form/health-form.component';
 import { Officer } from 'src/app/interfaces/user';
 import { Router } from '@angular/router';
+import { NgToastService } from 'ng-angular-popup';
 
 @Component({
   selector: 'app-officerprofile',
@@ -23,7 +24,8 @@ export class OfficerprofileComponent implements OnInit {
     private formBuilder: FormBuilder,
     private dialog: MatDialog,
     private observer: BreakpointObserver,
-    private officerservice:OfficerService
+    private officerservice:OfficerService,
+    private toast:NgToastService,
     ) { }
 
   ngOnInit(): void {
@@ -89,17 +91,20 @@ export class OfficerprofileComponent implements OnInit {
   }
 
   updateOfficer(officerid: string) {
-    this.officerservice.updateofficerInfo(this.officerprofile.value,officerid)
+    this.officerservice.updateofficerInfo(this.officerprofile.value)
       .subscribe({
         next: (res:any) =>
         {
-         /*  this.officers = res.data;
+           this.officers = res.data;
+           this.toast.success({detail:"Profile Update",summary:"Profile Information Updated",duration:3400})
+           this.officerprofile.controls['Officer_id'].setValue(this.officers[0].Officer_id);
           this.officerprofile.controls['Password'].setValue(this.officers[0].Password);
           this.officerprofile.controls['Cellphone_number'].setValue(this.officers[0].Cellphone_number);
-          this.officerprofile.controls['Email'].setValue(this.officers[0].Email); */
+          this.officerprofile.controls['Email'].setValue(this.officers[0].Email);
          
           //this.officerprofile.reset();
-          alert('Officer details UPdated')
+          //this.toast.success({detail:"Profile Update",summary:"Profile Information Updated",duration:4000})
+          //alert('Officer details UPdated')
         }, error: () => {
           alert("Error while updating user");
         }
@@ -110,7 +115,7 @@ export class OfficerprofileComponent implements OnInit {
   {
     this.updateOfficer(`${sessionStorage.getItem('officer_id')}`);
     //alert(`${sessionStorage.getItem('officer_id')}`)
-    location.reload()
+    //location.reload()
   }
 
   user = (this.get())

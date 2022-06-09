@@ -5,6 +5,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { delay } from 'rxjs';
+import { NgToastService } from 'ng-angular-popup';
 @Component({
   selector: 'app-studentcard',
   templateUrl: './studentcard.component.html',
@@ -15,6 +16,7 @@ export class StudentcardComponent implements OnInit {
   
   constructor(private route:Router,
     private userservice:UserService,
+    private toast:NgToastService,
     private activatedRoute:ActivatedRoute)
   {
 
@@ -164,7 +166,8 @@ export class StudentcardComponent implements OnInit {
       this.temperatureCheck(this.Tempareture.value);
       await delay(500);
       this.onUpdateRecord();
-      alert('data inserted');
+      this.toast.success({detail:"Access Message",summary:"Student Granted Access",duration:4000})
+      //alert('data inserted');
       this.route.navigate(['viewpending']);
       //location.reload();
       this.tempForm.reset();

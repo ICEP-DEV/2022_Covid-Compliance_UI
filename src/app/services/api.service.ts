@@ -3,7 +3,7 @@ import { EventEmitter, Injectable, Output } from '@angular/core';
 import { map, Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 //import { FileToUpload } from '../interfaces/file-to-upload';
-import { addImage, GetAllOfficers, GetAllRecords, getImage, getTheUser, Officer, UpdatePassword, updatetheUser, User } from '../interfaces/user';
+import { addImage, GetAllOfficers, GetAllRecords, getImage, getTheUser, getTheVisitor, Officer, UpdatePassword, updatetheUser, User } from '../interfaces/user';
 
 @Injectable({
   providedIn: 'root'
@@ -61,6 +61,9 @@ export class ApiService {
   }
   getUser(id: string): Observable<getTheUser[]> {
     return this.http.get<getTheUser[]>(`${this.apiUrl}/view_user/user/`+id)
+  }
+  getVisitor(id: string): Observable<getTheVisitor[]> {
+    return this.http.get<getTheVisitor[]>(`${this.apiUrl}/select_visitor/visitor/`+id)
   }
    requestReset(body): Observable<any> {
     return this.http.post(`${this.apiUrl}/api/resetpassword/req-reset-password`, body);

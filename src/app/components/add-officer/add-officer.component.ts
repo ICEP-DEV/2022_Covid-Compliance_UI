@@ -81,6 +81,7 @@ export class AddOfficerComponent implements OnInit {
           this.toast.success({detail:"Add Officer",summary:"Officer Added",duration:3000})
           //alert('officer registered successfully');
           this.dialogRef.close('saved'); //close form once saved
+          location.reload()
         },
         error:()=>{
          alert('Could not register officer ');
