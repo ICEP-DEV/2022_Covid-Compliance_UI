@@ -65,8 +65,8 @@ export class ContactusComponent implements OnInit
        contact=>
        {
          console.log(contact);
-         this.toast.success({detail:"Contact Us",summary:"Message Sent",duration:4000})
-         this.contactForm.reset();
+         //this.toast.success({detail:"Contact Us",summary:"Message Sent",duration:4000})
+        
          //this.contactForm.reset();//this.router.navigate(['/contactus'])
        }
      )
@@ -76,6 +76,8 @@ export class ContactusComponent implements OnInit
     if(this.contactForm.valid)
     {
       this.onSendEmail();
+      this.contactForm.reset();
+      this.toast.success({detail:"Contact Us",summary:"Email Sent",duration:4000})
       //alert('Submitted Successful');
     }
   }
