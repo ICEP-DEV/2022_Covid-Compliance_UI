@@ -207,6 +207,18 @@ export class UserProfileComponent implements OnInit {
       }
 
 
+      userType=sessionStorage.getItem('isVisitor')
+      disableElements=true;
+      checkUserType():void
+      {
+        if(this.userType=='0')
+        {
+          this.disableElements=false;
+        }
+    
+      }
+
+
       /* reload()
       {
         this.router.

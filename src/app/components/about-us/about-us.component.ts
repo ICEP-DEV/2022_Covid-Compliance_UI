@@ -9,7 +9,17 @@ export class AboutUsComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit(): void {
+  ngOnInit(): void
+  {
+    this.deletesession();
   }
 
+
+  deletesession()
+  {
+    sessionStorage.removeItem('user_id');
+    sessionStorage.removeItem('Form_check');
+    sessionStorage.removeItem('buttoncheck');
+    /* this.router.navigate(['/login']); */
+  }
 }

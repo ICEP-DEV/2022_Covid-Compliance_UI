@@ -4,6 +4,7 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { Router } from '@angular/router';
+import { NgToastService } from 'ng-angular-popup';
 import { Newsfeed } from 'src/app/interfaces/newsfeed';
 import { NewsfeedService } from 'src/app/services/newsfeed.service';
 
@@ -16,7 +17,8 @@ export class AdminfeedComponent implements OnInit {
 
   newsfeedform!: FormGroup
   
-  constructor(private router:Router, private newsfeedservice:NewsfeedService) { }
+  constructor(private router:Router, private newsfeedservice:NewsfeedService,
+    private toast:NgToastService) { }
 
   ngOnInit(): void{
 
@@ -71,7 +73,7 @@ export class AdminfeedComponent implements OnInit {
 
   //table
 
-  displayedColumns: string[] = ['News_id','News', 'Title'/* , 'action' */];
+  displayedColumns: string[] = ['News_id','News', 'Title','Date', 'action'];
   dataSource !: MatTableDataSource<Newsfeed>;
 
   @ViewChild(MatPaginator) paginator !: MatPaginator;
@@ -111,15 +113,16 @@ export class AdminfeedComponent implements OnInit {
   }
 
 
-  DeleteOfficer(id:number){
+  DeleteOfficer(id:number):void{
     this.newsfeedservice.deleteNewsFeed(id)
     .subscribe({
       next:(res)=>{
         console.log(res)
-        alert('NewsFeed  Deleted');
+        //alert('NewsFeed  Deleted');
+        this.toast.success({detail:"News Feed",summary:"Successfully Deleted",duration:4000});
         this.onGetNewsFeed()
       },error:()=>{
-        alert('Could not delete newsfeed');
+        //alert('Could not delete newsfeed');
       }
     }) 
     }

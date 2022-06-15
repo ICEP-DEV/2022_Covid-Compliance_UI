@@ -34,7 +34,7 @@ export class NewsfeedService {
   }
 
   deleteNewsFeed(id:number):Observable<Newsfeed[]>{
-    return this.http.delete<Newsfeed[]>(`${this.apiUrl}/delete_news/news_id/`+id);
+    return this.http.delete<Newsfeed[]>(`${this.apiUrl}/delete_news/delete_news_feed/`+id);
   }
 
 }

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-//import {Chart, registerables } from 'chart.js';
+import {Chart, registerables } from 'chart.js';
 import { StatsService } from 'src/app/services/stats.service';
 import { ApiService } from 'src/app/services/api.service';
 import {AfterViewInit, ViewChild} from '@angular/core';
@@ -13,6 +13,7 @@ import { User,statsData, flueData, visitorData } from 'src/app/interfaces/user';
 import { UserService } from 'src/app/services/user.service';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-stats',
   templateUrl: './stats.component.html',
@@ -26,10 +27,14 @@ export class StatsComponent implements OnInit {
   @ViewChild(MatSort) sort !: MatSort;
 
   constructor(
+    private dialog: MatDialog,
+    private statsServices: StatsService,
+    
+    private api2:ApiService,
     private api:StatsService,
     private router:Router
     ) { 
-   // Chart.register(...registerables);
+   Chart.register(...registerables);
     
 
   }
@@ -37,20 +42,31 @@ export class StatsComponent implements OnInit {
 
 sum:any
 totalStaff:any
-
-
+speed:any;
+totalnumberofVisitotsandusers:any;
   ngOnInit(): void
   {
       this.getStats();
       this.getflue();
-      //this.statsDiagrams();
+      this.statsDiagrams();
       this.getvisitor();
 
-      this.sum=Number(sessionStorage.getItem('totalflue'))/(Number(sessionStorage.getItem('totalvisitors'))+Number(sessionStorage.getItem('totalstaff')))*100
+       //this.sum= Number(sessionStorage.getItem('totalflue'))/(Number(sessionStorage.getItem('totalvisitors'))+Number(sessionStorage.getItem('totalstaff')))+Number(sessionStorage.getItem('totalflue'))
 
+      
+
+      
+
+      /* Calculations */
       this.totalStaff=(Number(sessionStorage.getItem('totalvisitors'))+Number(sessionStorage.getItem('totalstaff')))
-
       sessionStorage.setItem('staff',this.totalStaff)
+
+      this.sum=(Number(sessionStorage.getItem('totalflue'))/(this.totalStaff+Number(sessionStorage.getItem('totalflue'))))*100
+
+      this.speed=1/0.71;
+
+      this.speed=this.speed.toFixed(2);
+      this.sum=this.sum.toFixed(2);
       //alert("total staff "+this.totalStaff)
       //alert('The infected is '+this.sum);
   
@@ -129,13 +145,13 @@ getvisitor() {
 
 /////end
 
-  
-  /* statsDiagrams()
+rateOfStaff:any;
+  statsDiagrams()
   {
     this.Chart =new Chart('canvas',{
       type: 'bar',
       data: {
-          labels: ['Students', 'Visitors', 'Staff'],
+          labels: ['Students', 'Visitors', 'Total Users'],
           datasets: [{
               label: 'Total members',
               data: [sessionStorage.getItem('totalstaff'),sessionStorage.getItem('totalvisitors'),sessionStorage.getItem('staff')],
@@ -165,15 +181,20 @@ getvisitor() {
       
     
  
+
+    this.rateOfStaff=Number(sessionStorage.getItem('totalstaff'))*this.speed
+
+
+
     this.Chart =new Chart('canvas2',{
       type: 'line',
       data: {
         
-          labels: ['Visitors', 'Staff', 'Students'],
+          labels: ['Visitors', 'Total Users', 'Students'],
           datasets: [{
            
               label: 'Spread of Flue..!!!',
-              data: [sessionStorage.getItem('totalstaff'),sessionStorage.getItem('totalvisitors'),sessionStorage.getItem('staff')],
+              data: [this.rateOfStaff,sessionStorage.getItem('totalvisitors'),sessionStorage.getItem('staff'),5],
               fill: true,
               backgroundColor: 'green',
               borderColor: 'blue',
@@ -194,7 +215,7 @@ getvisitor() {
     
   }
 
- */
+ 
 
   deletesession() {
     sessionStorage.removeItem('admin_id');

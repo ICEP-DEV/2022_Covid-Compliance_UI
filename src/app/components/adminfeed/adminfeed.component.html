@@ -135,16 +135,21 @@
                 <td mat-cell *matCellDef="let row"> {{row.News}} </td>
               </ng-container>
           
+              <ng-container matColumnDef="Date">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Date </th>
+                <td mat-cell *matCellDef="let row"> {{row.Date}} </td>
+              </ng-container>
   
               <!--Save Update button change -->
-            <!--   <ng-container matColumnDef="action">
+            <ng-container matColumnDef="action">
                 <th mat-header-cell *matHeaderCellDef mat-sort-header> Action </th>
                 <td mat-cell *matCellDef="let row"> 
                     <button mat-icon-button color="warn" (click)="DeleteOfficer(row.News_id)">
+                       <!--  <p>{{row.News_id}}</p> -->
                         <mat-icon>delete</mat-icon>
                     </button>
                  </td>
-              </ng-container> -->
+              </ng-container> 
           
               <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
               <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>

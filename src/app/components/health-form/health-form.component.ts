@@ -43,7 +43,7 @@ export class HealthFormComponent implements OnInit {
         covid19:new FormControl('',[Validators.required]),
         recentCough:new FormControl('',[Validators.required]),
         difficultyBreathing:new FormControl('',[Validators.required]),
-        lossOfTaste:new FormControl('',[Validators.required]),
+        weight_loss:new FormControl('',[Validators.required]),
         heavyHeadache:new FormControl('',[Validators.required]),
         infectedPerson:new FormControl('',[Validators.required]),
      
@@ -77,9 +77,9 @@ export class HealthFormComponent implements OnInit {
   {
     return this.healthform.get(' difficultyBreathing');
   }
-  get lossOfTaste()
+  get weight_loss()
   {
-    return this.healthform.get('lossOfTaste');
+    return this.healthform.get('weight_loss');
   }
   get  heavyHeadache()
   {
@@ -134,7 +134,8 @@ export class HealthFormComponent implements OnInit {
         this.dialogRef.close('formchecked');
         },
       );
-
+      window.location.reload();
+      
   /*   if(this.healthform.valid){
       alert('form valid');
     }

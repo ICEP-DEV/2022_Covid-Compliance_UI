@@ -29,6 +29,7 @@ import { Stats } from 'fs';
 import { StatsComponent } from './components/stats/stats.component';
 import { AdminfeedComponent } from './components/adminfeed/adminfeed.component';
 import { UpdatePasswordComponent } from './components/update-password/update-password.component';
+import { VacCardComponent } from './components/vac-card/vac-card.component';
 const routes: Routes = [
  {path:'',component:LandingPageComponent},
  {path:'register',component:RegisterComponent},
@@ -60,6 +61,8 @@ const routes: Routes = [
  {path:'reset_password/reset_password/:User_id',component:UpdatePasswordComponent},
  {path: '**',redirectTo:'ViewpendingComponent'},//if they put any route without the user id it loads the view pending
  {path:'stats',component:StatsComponent,canActivate:[AdminguardGuard]}
+
+ ,{path:"vac-card",component:VacCardComponent,canActivate:[UserguardGuard]}
 ];
 
 @NgModule({

@@ -15,6 +15,7 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-officer',
@@ -46,6 +47,8 @@ export class OfficerComponent implements OnInit {
       private router:Router,
       private api:ApiService) {}
 
+      private apiUrl=environment.apiUrl;
+
   validateTemp(temp2:number){
     if (temp2 >=36.1 && temp2 <=37.2) {
       this.messg="Allow access";
@@ -57,10 +60,11 @@ export class OfficerComponent implements OnInit {
   }
 
   formsearch!:FormGroup
-
+  profilePicture:any;
   ngOnInit(): void
    {
     this.deleteOtherSessions();
+    this.profilePicture=this.viewStudentProfile(sessionStorage.getItem('user_id'))
     this.formsearch=new FormGroup
     ({
       search:new FormControl('',Validators.required)
@@ -180,6 +184,15 @@ apimessage=''
   }
 
 
+
+  //show profile
+
+  viewStudentProfile(studentNumber)
+  {
+
+    return `${this.apiUrl}/select_pp/view/${studentNumber}`;
+    
+  }
   
 
 

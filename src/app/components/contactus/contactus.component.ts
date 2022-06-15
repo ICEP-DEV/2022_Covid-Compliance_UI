@@ -35,6 +35,8 @@ export class ContactusComponent implements OnInit
         email:new FormControl('',[Validators.required, Validators.email]),
       }
     )
+
+    this.deletesession();
   }
 
 
@@ -80,6 +82,16 @@ export class ContactusComponent implements OnInit
       this.toast.success({detail:"Contact Us",summary:"Email Sent",duration:4000})
       //alert('Submitted Successful');
     }
+  }
+
+
+
+  deletesession()
+  {
+    sessionStorage.removeItem('user_id');
+    sessionStorage.removeItem('Form_check');
+    sessionStorage.removeItem('buttoncheck');
+    
   }
 
 }

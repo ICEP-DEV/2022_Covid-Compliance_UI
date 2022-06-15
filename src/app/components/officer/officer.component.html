@@ -110,20 +110,31 @@
                 <mat-card-header>
 
                     <mat-card-title>Student Card</mat-card-title>
-                    <mat-card-subtitle>Student Details</mat-card-subtitle>
+
+                    <ul  *ngFor="let user of users;">
+
+                        <li>Profile Picture:
+                            <br> <img src={{user.profile_pic}} alt="Profile Picture"></li>
+
+
+                    </ul>
+
+                   <!--  <mat-card-subtitle>Student Details</mat-card-subtitle> -->
                 
+                   <br>
                 </mat-card-header>
 
             
-                      <img class="avatar" src="../../../assets/social-care.png"  mat-card-image>
- 
+                      <!-- <img class="avatar" src={{profilePicture}} alt="Profile Picture" mat-card-image>
+  -->
 
-                     <ul  *ngFor="let image of images;">
+                    <!--  <ul  *ngFor="let image of images;"> -->
 
-                        <li><img src={{image.pic_path}}></li>
-                        <li>{{image.pictureName}}</li>
+                       <!--  <li><img src={{profilePicture}} alt="Profile Picture"></li> -->
+                        <!-- <li>{{image.pictureName}}</li> -->
                         
-                    </ul>
+                    <!-- </ul> -->
+
                 <mat-card-content>
                     
                     <ul  *ngFor="let user of users;">
@@ -132,6 +143,7 @@
                         <li>First Name:{{user.First_name}}</li><br>
                         <li>Last Name:{{user.Last_name}}</li> <br>
                         <li>Email:{{user.Email}}</li>
+
 
                     </ul>
                     <br>
